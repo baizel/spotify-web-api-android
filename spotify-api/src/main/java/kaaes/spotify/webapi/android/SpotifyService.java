@@ -35,6 +35,7 @@ import kaaes.spotify.webapi.android.models.TracksToRemove;
 import kaaes.spotify.webapi.android.models.TracksToRemoveWithPosition;
 import kaaes.spotify.webapi.android.models.UserPrivate;
 import kaaes.spotify.webapi.android.models.UserPublic;
+import kaaes.spotify.webapi.android.models.CurrentlyPlaying;
 import retrofit.Callback;
 import retrofit.http.Body;
 import retrofit.http.DELETE;
@@ -1810,4 +1811,10 @@ public interface SpotifyService {
     @GET("/me/top/tracks")
     void getTopTracks(@QueryMap Map<String, Object> options, Callback<Pager<Track>> callback);
 
+    /*****************************
+     * Spotify Player (Beta)     *
+     *****************************/
+
+    @GET("/me/player/currently-playing")
+    void getCurrentlyPlaying(Callback<CurrentlyPlaying> callback);
 }
