@@ -1,5 +1,6 @@
 package kaaes.spotify.webapi.android;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import kaaes.spotify.webapi.android.annotations.DELETEWITHBODY;
@@ -1817,4 +1818,7 @@ public interface SpotifyService {
 
     @GET("/me/player/currently-playing")
     void getCurrentlyPlaying(Callback<CurrentlyPlaying> callback);
+
+    @PUT("/me/player/play")
+    void play(@Body HashMap<String,Object> uri, Callback<Object> callback);
 }
