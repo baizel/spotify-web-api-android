@@ -8,6 +8,7 @@ import java.util.Map;
 public class CurrentlyPlaying implements Parcelable {
     public boolean is_playing;
     public Track item;
+    public Context context;
 
     @Override
     public int describeContents() {
@@ -21,6 +22,7 @@ public class CurrentlyPlaying implements Parcelable {
     }
 
     public CurrentlyPlaying() {
+
     }
 
     protected CurrentlyPlaying(Parcel in) {
@@ -37,4 +39,17 @@ public class CurrentlyPlaying implements Parcelable {
             return new CurrentlyPlaying[size];
         }
     };
+
+    @Override
+    public String toString() {
+        String track = "None";
+        String context = "None";
+        if (item != null) {
+            track = item.name;
+        }
+        if (this.context != null) {
+            context = this.context.uri;
+        }
+        return "Track Name: " + track + " Context: " + context;
+    }
 }

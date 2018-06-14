@@ -1821,4 +1821,6 @@ public interface SpotifyService {
 
     @PUT("/me/player/play")
     void play(@Body HashMap<String,Object> uri, Callback<Object> callback);
+
+
 }
